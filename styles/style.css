@@ -1,0 +1,133 @@
+body {
+    background-image:url('../images/pic11.gif');
+    background-size: cover;
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 790px;
+    background-position: 50% 50%;
+}
+
+.wrapper {
+    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+}
+
+.wrapper .static-txt {
+    font-size: 60px;
+    color: greenyellow;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-txts {
+    margin-left: -27px;
+    margin-top: 17px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li{
+    color: #FC6D6D;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+}
+
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span{
+    position: relative;
+}
+
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    border-left: 2px solid #FC6D6D;
+    animation: typing 1.5s steps(10) infinite;
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.upload-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000000;
+    color: rgb(156, 4, 4);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 25%;
+    right: 40%;
+}
+
+.upload-button:hover {
+    background-color: #420101;
+}
+
+.download-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.download-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000000;
+    color: rgb(156, 4, 4);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+}
+
+.download-button:hover {
+    background-color: #420101;
+}
+
+#fileList {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.top-bar {
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    top: 0%;
+    background-color: black;
+}
