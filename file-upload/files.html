@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uploaded Files</title>
+    <link rel="stylesheet" type="text/css" href="../styles/filestyle.css">
+</head>
+<body>
+    <h1>Uploaded Files</h1>
+    <ul id="fileList">
+        <!-- File list will be populated here -->
+    </ul>
+    <a href="/" class="back-link">Go Back</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/list-files')
+                .then(response => response.json())
+                .then(files => {
+                    const fileList = document.getElementById('fileList');
+                    fileList.innerHTML = files.map(file => `<li><a href="/download?filename=${encodeURIComponent(file)}">${file}</a></li>`).join('');
+                })
+                .catch(error => {
+                    console.error('Error fetching files:', error);
+                    document.getElementById('fileList').innerHTML = '<li>Error loading files.</li>';
+                });
+        });
+    </script>
+</body>
+</html>
