@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Share Server</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="wrapper">
+            <div class="static-txt">Share your</div>
+            <ul class="dynamic-txts">
+                <li><span>Pictures</span></li>
+                <li><span>Videos</span></li>
+                <li><span>GIFs</span></li>
+                <li><span>Documents</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="upload-container" style="text-align: center;">
+        <form id="uploadForm" action="http://127.0.0.1:3000/upload" method="post" enctype="multipart/form-data">
+            <input type="file" id="fileInput" name="files" multiple style="display: none;">
+            <button id="uploadButton" class="upload-button" type="button">Upload</button>
+        </form>
+        <div id="filelist"></div>
+    </div>
+    <div class="download-container" style="text-align: center;">
+        <div class="download-container" style="text-align: center;">
+            <button id="downloadButton" class="download-button" type="button">View Uploaded Files</button>
+        </div>
+        </form>
+        <div id="filelist"></div>
+    </div>
+</body>
+</html>
